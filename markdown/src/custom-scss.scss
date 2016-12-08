@@ -1,0 +1,24 @@
+$color: darkgray;
+.container{
+    padding-top: 20px;
+
+    #heading{
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    textarea{
+        resize: vertical;
+    }
+
+    .textarea{
+        height: 500px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .output{
+        border: 1px solid $color;
+        overflow: scroll;
+    }
+}

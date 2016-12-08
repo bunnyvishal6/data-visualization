@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.col-centered {
+    float:none;
+    margin:0 auto;
+}
+
+.heading{
+    text-align: center;
+    color: #D88E44;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#frame{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.currency{
+    margin: 8px 0px -10px 1px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.date {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#caption{
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    color: #7A17DD;
+    font-family: sans-serif
+}
+
