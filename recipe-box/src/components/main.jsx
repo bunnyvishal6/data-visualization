@@ -70,7 +70,7 @@ export default class Application extends React.Component {
     }
 
      editRecipe(e){
-        /**get current recipies to modify the recipes array in state */
+        /**get current recipes to modify the recipes array in state */
         let recipes = this.state.recipes ? this.state.recipes.map(r => r) : [];
         /**Get the current recipe number with data-editRefs attribute */
         let currentRecipeNum = e.target.attributes.getNamedItem('data-editRefs').value;
@@ -79,18 +79,18 @@ export default class Application extends React.Component {
         /**Fill the form with previous data of this recipe */
         document.getElementById('newRecipeName').value = recipes[currentRecipeNum].name;
         document.getElementById('newRecipeIngredients').value = recipes[currentRecipeNum].ingredients.join();
-        /**remove the current recipe from recipies then set a new state and get the values from form.*/
+        /**remove the current recipe from recipes then set a new state and get the values from form.*/
         recipes.splice(currentRecipeNum, 1);
         /** Open the modal by triggerin a click on add recipe button having a ref */
         this.ModalOpenButton.click();
     }
 
     delteRecipe(e){
-        /**get current recipies to modify the recipes array in state */
+        /**get current recipes to modify the recipes array in state */
         let recipes = this.state.recipes ? this.state.recipes.map(r => r) : [];
         /**Get the current recipe number with data-closeRefs attribute */
         let currentRecipeNum = e.target.attributes.getNamedItem('data-closeRefs').value;
-        /**remove the current recipe from recipies then set a new state */
+        /**remove the current recipe from recipes then set a new state */
         recipes.splice(currentRecipeNum, 1);
         /**Also need to remove from state directly. */
         this.state.recipes.splice(currentRecipeNum, 1);
@@ -105,13 +105,16 @@ export default class Application extends React.Component {
         let index = +document.getElementById('forEdit').value;
         /**Checking if forEdit input field has a value greater than zero. If so then the recipe is edited and added to in its previous index else will be pushed into array */
         if( index >= 0){
-            /**remove the current recipe from recipies then set a new state and get the values from form.*/
+            /**remove the current recipe from recipes then set a new state and get the values from form.*/
             recipes.splice(index, 1);
+            /**Need to manipulate recipes directly from state And no needed of direct manipulation of recipes in state for addition or substraction*/
+            this.state.recipes.splice(index, 1);
             recipes.splice(index, 0, {name: document.getElementById('newRecipeName').value, ingredients: document.getElementById('newRecipeIngredients').value.split(',')});
             this.state.recipes.splice(index, 0, {name: document.getElementById('newRecipeName').value, ingredients: document.getElementById('newRecipeIngredients').value.split(',')});
             /**After adding the edited recipe to its old place make the forEdit input value to less than 0 */
             document.getElementById('forEdit').value = -1;
         } else {
+            /**Need to manipulate recipes directly from state And no needed of direct manipulation of recipes in state for addition or substraction*/
             recipes.push({name: document.getElementById('newRecipeName').value, ingredients: document.getElementById('newRecipeIngredients').value.split(',')});
             this.state.recipes.push({name: document.getElementById('newRecipeName').value, ingredients: document.getElementById('newRecipeIngredients').value.split(',')});
         }
@@ -149,7 +152,7 @@ export default class Application extends React.Component {
                                 <h3 className="modal-title text-center">Add a recipe</h3>
                             </div>
                             <form onSubmit={this.handleSubmit.bind(this)}>
-                                {/**Below input is used for editing the current recipies. */}
+                                {/**Below input is used for editing the current recipes. */}
                                 <input type='hidden' value='-1' id='forEdit' />
                                 <div className="modal-body">
                                     <div className='form-group'>
