@@ -30,8 +30,8 @@ module.exports = {
 
         //Uncomment below these for production build.
 
-        //new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify('production')}}),
-        //new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+        new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify('production')}}),
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
 
         /* minification of html files and keeping minified files in dist folder */
         new HtmlWebpackPlugin({
