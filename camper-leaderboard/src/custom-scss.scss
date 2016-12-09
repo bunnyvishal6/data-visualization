@@ -1,0 +1,24 @@
+.container{
+    padding-top: 10px;
+    .col-centered{
+        margin: auto;
+        float: none;
+    }
+    th{
+        text-align: center;
+        font-size: 18px;
+    }
+    tbody  tr  td{
+        font-size: 16px;
+    }
+    .img{
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        margin-right: 2%;
+    }
+    .data{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
