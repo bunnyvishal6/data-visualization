@@ -1,5 +1,5 @@
 ## Data-visualization
-* All data visualization projects for free code camp. Each folder is a project
+* Data visualization projects for free code camp. Each folder is a project.
 
 ### To Deploy this project
 * Download or clone a folder from this repo.

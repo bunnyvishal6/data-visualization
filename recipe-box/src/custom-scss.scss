@@ -1,0 +1,23 @@
+.container{
+    padding-top: 10px;
+    .col-centered{
+        margin: auto;
+        float: none;
+    }
+    textarea{
+        resize: vertical;
+    }
+
+    #accordion-frame{
+        margin-top: 2%;
+        .panel-heading{
+            background-color: #A564E6;
+            color: white;
+        }
+        #accordion{
+            .ingredients-heading{
+                margin: 1% 0% 2% 0%;
+            }
+        }
+    }
+}
