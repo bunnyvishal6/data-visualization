@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa');
+.container{   
+    .text-center{
+        text-align: center;
+    }
+    #heading{
+        font-family: 'Aref Ruqaa', serif;
+        color: #7B46D6;
+    }
+    #game-grid{
+        margin: auto;
+        background-color: #000000;
+        border: 10px solid #676465;
+        border-radius: 5px;
+        line-height: 0;
+        .cell{
+            display: inline-block;
+        }
+    }
+    #options-div{
+        margin: 10px auto; 
+        font-family: sans-serif;
+        width: 400px;
+        border: 5px solid #898989;
+        border-radius: 5px;
+        padding: 5px;
+        .text-in-options-div{
+            width: 150;
+            display: inline-block;
+            margin: 5px auto;
+            font-family: sans-serif;
+            font-size: 18px; 
+        }
+        .buttons-div{
+            width: 240px;
+            float: right;
+            text-align: center;
+            margin: 3px auto; 
+        }
+        .size-btn{
+            background-color: #29BC8D;
+            border: 1px solid #29BC8D
+        }
+        .speed-btn{
+            background-color: #29BC8D;
+            border: 1px solid #29BC8D;
+        }
+        .btn{
+            margin-left: 1%;
+            color: white;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 10%;
+        }
+    }
+}
