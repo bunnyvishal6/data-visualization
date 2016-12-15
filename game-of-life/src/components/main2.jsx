@@ -55,7 +55,6 @@ export default class Application extends React.Component {
 
     createHtmlElementsForGrid() {
         this.gridHtml = []; /**declare this.griHtmlElements array to push cells*/
-        this.liveCells = 0; /**this.liveCells is used for continous generations */
         for (let i = 0; i < this.grid.length; i++) {
             for (let k = 0; k < this.grid[i].length; k++) {
                 /**style for cell elements*/
@@ -75,7 +74,6 @@ export default class Application extends React.Component {
                 }
                 if (this.grid[i][k].value == 1) {
                     cellStyle.backgroundColor = younger;
-                    this.liveCells += 1;
                 }
                 /**push the cell div into this.gridHtml array*/
                 this.gridHtml.push(<div id={'cell-' + i + '-' + k} key={i + '-' + k} className='cell' style={cellStyle}></div>);
@@ -97,9 +95,7 @@ export default class Application extends React.Component {
                 if (insertedLife) {
                     let gridMapped = this.createHtmlElementsForGrid();
                     if (gridMapped) {
-                        setTimeout(()=>{
-                            this.play();
-                        }, 1000);
+                        this.play();
                         return this.gridHtml;
                     }
                 }
@@ -197,31 +193,18 @@ export default class Application extends React.Component {
                         neighbourStrength += 1;
                     }
                 });
-                let cellElement = document.getElementById('cell-'+ i + '-' + k);
+                
                 if(cell.age){ /**if current cell is live cell */
                     if (neighbourStrength > 1 && neighbourStrength < 4) { /**if cell has sufficient neighbours will live */
                         if(cell.age == 'young'){
-                            this.grid[i][k].age == 'adult';
-                            cellElement.style.backgroundColor = '#D50B0B';
+                            cell.age == 'adult'
                         }
                     } else { /** else cell will die */
-                        this.grid[i][k] = {age: '', value: 0};
-                        cellElement.style.backgroundColor = 'black';
-                        this.liveCells -= 1;
+                        this.grid[i][k] = {age: '', value: 0}
                     }
                 } else { /**if current cell is dead cell */
                     if(neighbourStrength === 3){ /**if it has enough support make it alive */
-                        this.grid[i][k] = {age: 'young', value: 1};
-                        cellElement.style.backgroundColor = '#F78787';
-                        this.liveCells += 1;
-                    }
-                }
-
-                if(i == this.grid.length - 1 && k == this.grid[i].length - 1){
-                    if(this.liveCells){
-                        setTimeout(()=>{
-                            this.play();
-                        }, 200)
+                        this.grid[i][k] = {age: 'young', value: 1}
                     }
                 }
                 
