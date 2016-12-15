@@ -17,13 +17,51 @@
             display: inline-block;
         }
     }
+
+    .btn{
+        margin-left: 1%;
+        color: white;
+        height: 25px;
+        cursor: pointer;
+        border-radius: 10%;
+        &:active{
+            border: none;
+            outline: none;
+        }
+        &:focus{
+            border: none;
+            outline: 0;
+        }
+    }
+
+    #game-buttons-div{
+        display: inline-block;
+        float: left;
+        margin: 10px;
+        width: 200px;
+        height: 30px;
+        padding: 30px 0px;
+        text-align:center;
+        border: 5px solid #898989;
+        border-radius: 5px;
+        .game-btn{
+            height: 30px;
+            background-color:#9B52E4;
+            color: white;
+            border: 1px solid #9B52E4;
+        }
+    }
+
     #options-div{
-        margin: 10px auto; 
+        display: inline-block;
+        float: left;
+        margin: 10px;
         font-family: sans-serif;
+        height: 70px;
         width: 400px;
         border: 5px solid #898989;
         border-radius: 5px;
-        padding: 5px;
+        padding: 10px;
         .text-in-options-div{
             width: 150;
             display: inline-block;
@@ -37,20 +75,14 @@
             text-align: center;
             margin: 3px auto; 
         }
-        .size-btn{
-            background-color: #29BC8D;
-            border: 1px solid #29BC8D
-        }
         .speed-btn{
             background-color: #29BC8D;
             border: 1px solid #29BC8D;
         }
-        .btn{
-            margin-left: 1%;
-            color: white;
+        .option-btn{
             height: 25px;
-            cursor: pointer;
-            border-radius: 10%;
         }
+        
     }
+
 }
