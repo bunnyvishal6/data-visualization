@@ -27,7 +27,8 @@ module.exports = {
     plugins: [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
-
+        /**for jquery to be available in global scope */
+        new webpack.ProvidePlugin({$: "jquery", jQuery: "jquery"}),
         //Uncomment below these for production build.
 
         //new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify('production')}}),

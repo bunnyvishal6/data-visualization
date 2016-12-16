@@ -10,7 +10,33 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <h1 id='heading'>Game of life</h1>
+    <div id='generations-frame'>
+        <p>Generations:  <span id="generations"></span></p>
+    </div>
+    <div id='grid'></div>
+
+    <div id='options-frame'>
+        <div id='game-buttons-div'>
+            <button id = 'play' class='btn game-btn'>Play</button>
+            <button id = 'pause' class='btn game-btn'>Pause</button>
+            <button id = 'clear' class='btn game-btn'>Clear</button>
+        </div>
+        <div id='options-div'>
+            <div class='text-in-options-div'>Grid sizes: &nbsp;</div>
+            <div id='sizeButtonsDiv' class='buttons-div'>
+                <button id='small' class='btn option-btn size-btn'>Small</button>
+                <button id='medium' class='btn option-btn size-btn'>Medium</button>
+                <button id='large' class='btn option-btn size-btn'>Large</button>
+            </div>
+            <div class='text-in-options-div'>Simulation speed: &nbsp;</div>
+            <div class='buttons-div'>
+                <button id='slow' data-delay='200' class='btn option-btn speed-btn'>Slow</button>
+                <button id='normal' data-delay='100'  class='btn option-btn speed-btn'>Normal</button>
+                <button id='fast' data-delay='50' class='btn option-btn speed-btn'>Fast</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Latest jQuery
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
