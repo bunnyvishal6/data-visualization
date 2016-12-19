@@ -1,5 +1,5 @@
 {
-  "name": "force-directed-graph",
+  "name": "national-contiguity",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bunnyvishal6/data-vizualization/force-directed-graph"
+    "url": "https://github.com/bunnyvishal6/data-vizualization/national-contiguity/"
   },
   "keywords": [
-    "force-directed-graph",
+    "heat map",
     "data visualization",
     "d3"
   ],

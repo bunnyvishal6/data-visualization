@@ -14,7 +14,7 @@ let options = {
     module: {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
-            {test: /\.js$/, exclude: /node_modules/, loader:'babel-loader', query:{presets:['es2015']} }
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015'] } }
         ]
     },
     plugins: [
@@ -45,7 +45,8 @@ let options = {
             canPrint: true
         }),
         /**Copy json file from src to public folder */
-        new CopyWebpackPlugin([{from: path.join(__dirname, './src/data.json'), to: path.join(__dirname, './public')}])
+        new CopyWebpackPlugin([{ from: path.join(__dirname, './src/data.json'), to: path.join(__dirname, './public') }]),
+        new CopyWebpackPlugin([{ from: path.join(__dirname, './src/flags.png'), to: path.join(__dirname, './public') }])
     ]
 };
 
