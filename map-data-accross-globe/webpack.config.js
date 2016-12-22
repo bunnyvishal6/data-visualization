@@ -18,12 +18,13 @@ let options = {
         ]
     },
     plugins: [
-        /* minification of dist js file */
+        /* minification of dist js file 
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         }),
+        */
         /* minification of html files and keeping minified files in dist folder */
         new HtmlWebpackPlugin({
             template: 'src/index.html', //Input
@@ -45,7 +46,8 @@ let options = {
             canPrint: true
         }),
         /**Copy json file from src to public folder */
-        new CopyWebpackPlugin([{ from: path.join(__dirname, './src/data.json'), to: path.join(__dirname, './public') }])
+        new CopyWebpackPlugin([{ from: path.join(__dirname, './src/data.json'), to: path.join(__dirname, './public') }]),
+        new CopyWebpackPlugin([{ from: path.join(__dirname, './src/meteorites.json'), to: path.join(__dirname, './public') }])
     ]
 };
 
