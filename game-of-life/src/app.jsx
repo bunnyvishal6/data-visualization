@@ -162,6 +162,7 @@ function clear() {
     grid = [];/**clear grid */
     gameStatus = ''; /**set game status to nill */
     grid = createGrid(size); /**create new grid */
+    generations = 0; /**empty the generations */
     drawGridHtml(); /**redraw grid */
     setTimeout(() => {
         $("#generations").html('0'); /**display 0 generations */
